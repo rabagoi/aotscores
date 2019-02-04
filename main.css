@@ -1,0 +1,42 @@
+img {
+    /* Change image size and center horizontally */
+    max-height: 20%;
+    max-width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    background-color: darkblue;
+}
+
+body {
+    background-color:black;
+    color:gold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    text-align: center;
+    border-spacing: 0px;
+    font-size: 200%;
+}
+
+th {
+    /* font-size: 150%; */
+    font-weight: bolder;
+}
+
+.bigquestion {
+    font-weight: bolder;
+    background-color: dimgray;
+}
+
+.summary {
+    font-weight: bolder;
+    font-size: 120%;
+    height: 125%;
+    background-color: darkslategray;
+}
+
+/* Add class references for Titles, head rows (th?), Total score rows */

@@ -19,10 +19,10 @@ scores= [
             30, 30, 40, 50, 10, 75, 80, 80, 100, 60, 40, -500],
 
         ["Team &Sigma;<sub>n=0</sub> 1/2<sup>n</sup>",
-            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            5, 1, 20, 40, 50, 100, 50, 25, 12, 6, 3, 123],
 
         ["Team &pi;, Basically",
-            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            30, 10, 40, 10, 50, 90, 20, 60, 50, 30, 50, -80],
 
         ["Team 2<sup>2</sup>",
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -51,17 +51,22 @@ with open("index.html", 'w') as data:
     Header()
 
     #Set background and text colors, font
-    data.write("<body style=\"background-color:black; color:gold; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif\">\n")
+    data.write("<body>\n")
+    # data.write(indent+"<img src=\"AoTLogo.png\">\n")
     data.write(indent+"<h1 style=\"font-size:60px; text-align:center\">Astronomy on Tap Scoreboard</h1>\n")
     data.write(indent+"<hr>\n")
-    data.write(indent+"<table style=\"table-layout:fixed; width:100%; text-align:center; border-spacing:0px; font-size:larger\">\n")
+    data.write(indent+"<table>\n")
     #Fill in the data cells of the table
-    for i in range(len(scores[0])+2):
+    for i in range(len(scores[0])+3):
 
         # Strings for the opening tags, table row, and closing tags.
         ot = 2*indent+"<tr>\n"
         row = 3*indent
         ct = '\n'+2*indent+"</tr>\n"
+
+        # Cell opening and closing tags
+        cell_ot = "<td>" if i!=0 else "<th>"
+        cell_ct = "</td>" if i!=0 else "</th>"
 
         # Variable to set the question number, set to i%(1+N_questions).
         # Change this if the number of questions per round is different.
@@ -69,32 +74,42 @@ with open("index.html", 'w') as data:
         qlabel = "Question"+(" #"+str(qnum) if i!=0 else '')
 
         # Add special labels for the halftime and final questions.=
-        if i == 0:
-            ot = ot.replace("<tr>", "<tr style=\"font-size:larger; font-weight:bolder\">")
+        # if i == 0:
+        #     ot = ot.replace("<tr>", "<tr style=\"font-size:larger; font-weight:bolder\">")
         if i == roundlength/2:
             qlabel = "Halftime"
-            ot = ot.replace("<tr>", "<tr style=\"font-weight:bolder; background-color:dimgray\">")
+            ot = ot.replace("<tr>", "<tr class=\"bigquestion\">")
         elif i == roundlength:
             qlabel = "Final"
-            ot = ot.replace("<tr>", "<tr style=\"font-weight:bolder; background-color:dimgray\">")
+            ot = ot.replace("<tr>", "<tr class=\"bigquestion\">")
         elif i == roundlength+1:
             qlabel = "Halftime Totals"
-            ot = ot.replace("<tr>", "<tr style=\"font-weight:bolder; font-size:x-large\">")
+            ot = ot.replace("<tr>", "<tr class=\"summary\">")
             ot = 2*indent+"<tr><td><br></td></tr>\n" + ot
         elif i == roundlength+2:
+            qlabel = "Pre-Final Scores"
+            ot = ot.replace("<tr>", "<tr class=\"summary\">")
+        elif i == roundlength+3:
             qlabel = "Final Scores"
-            ot = ot.replace("<tr>", "<tr style=\"font-weight:bolder; font-size:x-large\">")
+            ot = ot.replace("<tr>", "<tr class=\"summary\">")
 
         # Add question number
-        ot += 3*indent+"<td>"+qlabel+"</td>\n"
+        ot += 3*indent+cell_ot+qlabel+cell_ct+"\n"
         # Write the scores for each round.
         for j in range(len(scores)):
-            if i <= roundlength:
-                row += "<td>"+str(scores[j][i])+"</td>"
-            elif i == roundlength+1:
-                row += "<td>"+str(sum(scores[j][1:Nq+2]))+"</td>"
+            # Halftime Scores
+            if i == roundlength+1:
+                row += cell_ot+str(sum(scores[j][1:Nq+2]))+cell_ct
+            # Prefinal Scores
             elif i == roundlength+2:
-                row += "<td>"+str(sum(scores[j][1:]))+"</td>"
+                row += cell_ot+str(sum(scores[j][1:-1]))+cell_ct
+            # Final Scores
+            # TO DO: Change <td> for 1st, 2nd, 3rd place
+            elif i == roundlength+3:
+                row += cell_ot+str(sum(scores[j][1:]))+cell_ct
+            # Scores for round i
+            else:
+                row += cell_ot+str(scores[j][i])+cell_ct
 
         data.write(ot+row+ct)
 
