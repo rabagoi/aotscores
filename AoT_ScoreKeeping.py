@@ -39,24 +39,14 @@ def Header():
     data.write("<head>\n")
     data.write(indent+"<meta charset=\"utf-8\" />\n")
     data.write(indent+"<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n")
-    data.write(indent+"<title>Astronomy on Tap Scoreboard (TEST)</title>\n")
+    data.write(indent+"<title>Astronomy on Tap Scoreboard</title>\n")
     data.write(indent+"<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n")
     data.write(indent+"<link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"main.css\" />\n")
     data.write(indent+"<script src=\"main.js\"></script>\n")
     data.write("</head>\n")
 
-
-# Write the HTML script.
-with open("index.html", 'w') as data:
-    Header()
-
-    #Set background and text colors, font
-    data.write("<body>\n")
-    # data.write(indent+"<img src=\"AoTLogo.png\">\n")
-    data.write(indent+"<h1 style=\"font-size:60px; text-align:center\">Astronomy on Tap Scoreboard</h1>\n")
-    data.write(indent+"<hr>\n")
-    data.write(indent+"<table>\n")
-    #Fill in the data cells of the table
+# Write the scores for individual questions
+def WriteScores(scores):
     for i in range(len(scores[0])+3):
 
         # Strings for the opening tags, table row, and closing tags.
@@ -73,9 +63,7 @@ with open("index.html", 'w') as data:
         qnum = i%6
         qlabel = "Question"+(" #"+str(qnum) if i!=0 else '')
 
-        # Add special labels for the halftime and final questions.=
-        # if i == 0:
-        #     ot = ot.replace("<tr>", "<tr style=\"font-size:larger; font-weight:bolder\">")
+        # Add special labels for the halftime and final questions.
         if i == roundlength/2:
             qlabel = "Halftime"
             ot = ot.replace("<tr>", "<tr class=\"bigquestion\">")
@@ -106,12 +94,64 @@ with open("index.html", 'w') as data:
             # Final Scores
             # TO DO: Change <td> for 1st, 2nd, 3rd place
             elif i == roundlength+3:
+                finals = [sum(scores[k][1:]) for k in range(len(scores))]
+                print(finals)
                 row += cell_ot+str(sum(scores[j][1:]))+cell_ct
             # Scores for round i
             else:
                 row += cell_ot+str(scores[j][i])+cell_ct
 
         data.write(ot+row+ct)
+
+# Write only the summary scores, Round 1 total, Round 2 total, etc.
+def RoundScores(scores):
+    # Calculate total scores for each round.
+    totals = [
+    ["Teams"]+[scores[i][0] for i in range(len(scores))],
+    ["Round 1"]+[sum(scores[i][1:Nq+1]) for i in range(len(scores))],
+    ["Halftime"]+[sum(scores[i][1:Nq+2]) for i in range(len(scores))],
+    ["Round 2"]+[sum(scores[i][Nq+2:-1]) for i in range(len(scores))],
+    ["Pre-Final"]+[sum(scores[i][1:-1]) for i in range(len(scores))],
+    ["Final"]+[sum(scores[i][1:]) for i in range(len(scores))],
+    ]
+
+    # Write total scores
+    for i in range(len(totals)):
+        print(totals[i])
+
+        # Strings for the opening tags, table row, and closing tags.
+        ot = 2*indent+"<tr>\n"
+        row = 3*indent
+        ct = '\n'+2*indent+"</tr>\n"
+
+        # Cell opening and closing tags
+        cell_ot = "<td>" if i!=0 else "<th>"
+        cell_ct = "</td>" if i!=0 else "</th>"
+
+        # Write data of each cell.
+        for j in range(len(totals[0])):
+            row += cell_ot+str(totals[i][j])+cell_ct
+
+        print(row)
+        data.write(ot+row+ct)
+
+
+
+#------------------------------------------------------------------------
+# Write the HTML script.
+with open("index.html", 'w') as data:
+    Header()
+
+    #Set background and text colors, font
+    data.write("<body>\n")
+    # data.write(indent+"<img src=\"AoTLogo.png\">\n")
+    data.write(indent+"<h1 style=\"font-size:60px; text-align:center\">Astronomy on Tap Scoreboard</h1>\n")
+    data.write(indent+"<hr>\n")
+    data.write(indent+"<table>\n")
+
+    #Fill in the data cells of the table
+    #WriteScores(scores)
+    RoundScores(scores)
 
     data.write(indent+"</table>\n")
     data.write("</body>\n")
