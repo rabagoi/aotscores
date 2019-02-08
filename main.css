@@ -10,7 +10,7 @@ img {
 
 body {
     background-color:black;
-    color:gold;
+    color:yellow;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -39,4 +39,7 @@ th {
     background-color: darkslategray;
 }
 
+.final {
+    font-size: 150%;
+}
 /* Add class references for Titles, head rows (th?), Total score rows */

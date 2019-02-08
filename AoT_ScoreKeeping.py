@@ -9,26 +9,36 @@ script fills in the appropriate HTML table, which can
 be displayed with a web browser.
 '''
 
-Nq = 5                      # Number of questions in a round
-roundlength = 2*(Nq+1)      # Length of a round, including labels
+'''
+---------------------------------------------------------------------
+TO DO:
+| | Allow the number of entries in the team arrays to be any size, while
+adjusting the number of rounds, i.e. separate the round and team counters
+| | Use a file input instead of opening the code?
+---------------------------------------------------------------------
+'''
+
+N = 2                       # Number of questions in a round
+roundlength = 2*(N+1)       # Length of a round, including labels
 indent = ' '*2              # Size of the indent
+finale = True               # If True, the Final Scores row will be colored.
 
 # Team names and scores. Fill in with teams and scores from each event.
 scores= [
         ["Team 1",
-            30, 30, 40, 50, 10, 75, 80, 80, 100, 60, 40, -500],
+            0, 0, 0, 0, 0, 0],
 
         ["Team &Sigma;<sub>n=0</sub> 1/2<sup>n</sup>",
-            5, 1, 20, 40, 50, 100, 50, 25, 12, 6, 3, 123],
+            0, 0, 0, 0, 0, 0],
 
         ["Team &pi;, Basically",
-            30, 10, 40, 10, 50, 90, 20, 60, 50, 30, 50, -80],
+            0, 0, 0, 0, 0, 0],
 
         ["Team 2<sup>2</sup>",
-            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            0, 0, 0, 0, 0, 0],
 
         ["Team V",
-            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            0, 0, 0, 0, 0, 0],
         ]
 
 
@@ -45,7 +55,8 @@ def Header():
     data.write(indent+"<script src=\"main.js\"></script>\n")
     data.write("</head>\n")
 
-# Write the scores for individual questions
+
+# Write the scores for individual rounds
 def WriteScores(scores):
     for i in range(len(scores[0])+3):
 
@@ -60,8 +71,8 @@ def WriteScores(scores):
 
         # Variable to set the question number, set to i%(1+N_questions).
         # Change this if the number of questions per round is different.
-        qnum = i%6
-        qlabel = "Question"+(" #"+str(qnum) if i!=0 else '')
+        qnum = i-i//(N+1)
+        qlabel = "Round"+(' '+str(qnum) if i!=0 else '')
 
         # Add special labels for the halftime and final questions.
         if i == roundlength/2:
@@ -76,27 +87,29 @@ def WriteScores(scores):
             ot = 2*indent+"<tr><td><br></td></tr>\n" + ot
         elif i == roundlength+2:
             qlabel = "Pre-Final Scores"
-            ot = ot.replace("<tr>", "<tr class=\"summary\">")
+            ot = ot.replace("tr", "tr class=\"summary\"")
         elif i == roundlength+3:
             qlabel = "Final Scores"
-            ot = ot.replace("<tr>", "<tr class=\"summary\">")
+            ot = ot.replace("tr", "tr class=\"final summary\"")
 
         # Add question number
         ot += 3*indent+cell_ot+qlabel+cell_ct+"\n"
+        
         # Write the scores for each round.
         for j in range(len(scores)):
             # Halftime Scores
             if i == roundlength+1:
-                row += cell_ot+str(sum(scores[j][1:Nq+2]))+cell_ct
+                row += cell_ot+str(sum(scores[j][1:N+2]))+cell_ct
             # Prefinal Scores
             elif i == roundlength+2:
                 row += cell_ot+str(sum(scores[j][1:-1]))+cell_ct
             # Final Scores
-            # TO DO: Change <td> for 1st, 2nd, 3rd place
             elif i == roundlength+3:
-                finals = [sum(scores[k][1:]) for k in range(len(scores))]
-                print(finals)
-                row += cell_ot+str(sum(scores[j][1:]))+cell_ct
+                fscore = sum(scores[j][1:])
+                # Color the final scores for the finale.
+                if (finale):
+                    cell_ot = Podium(scores, fscore)
+                row += cell_ot+str(fscore)+cell_ct
             # Scores for round i
             else:
                 row += cell_ot+str(scores[j][i])+cell_ct
@@ -104,13 +117,14 @@ def WriteScores(scores):
         data.write(ot+row+ct)
 
 # Write only the summary scores, Round 1 total, Round 2 total, etc.
+# Might not need this?
 def RoundScores(scores):
     # Calculate total scores for each round.
     totals = [
     ["Teams"]+[scores[i][0] for i in range(len(scores))],
-    ["Round 1"]+[sum(scores[i][1:Nq+1]) for i in range(len(scores))],
-    ["Halftime"]+[sum(scores[i][1:Nq+2]) for i in range(len(scores))],
-    ["Round 2"]+[sum(scores[i][Nq+2:-1]) for i in range(len(scores))],
+    ["Round 1"]+[sum(scores[i][1:N+1]) for i in range(len(scores))],
+    ["Halftime"]+[sum(scores[i][1:N+2]) for i in range(len(scores))],
+    ["Round 2"]+[sum(scores[i][N+2:-1]) for i in range(len(scores))],
     ["Pre-Final"]+[sum(scores[i][1:-1]) for i in range(len(scores))],
     ["Final"]+[sum(scores[i][1:]) for i in range(len(scores))],
     ]
@@ -128,13 +142,28 @@ def RoundScores(scores):
         cell_ot = "<td>" if i!=0 else "<th>"
         cell_ct = "</td>" if i!=0 else "</th>"
 
-        # Write data of each cell.
+        # Write each row of the cell.
         for j in range(len(totals[0])):
             row += cell_ot+str(totals[i][j])+cell_ct
 
-        print(row)
+        # Write data to file
         data.write(ot+row+ct)
 
+
+# Colors the final scores for 1st, 2nd, and 3rd place.
+def Podium(scores, x):
+    finals = [sum(scores[k][1:]) for k in range(len(scores))]
+    finals.sort()   # Sort scores. Easy way out for now.
+
+    # Change color for 1st, 2nd, 3rd, and other.
+    if (x == finals[-1]):
+        return "<td style=\"color:gold\">"
+    elif (x == finals[-2]):
+        return "<td style=\"color:silver\">"
+    elif (x == finals[-3]):
+        return "<td style=\"color:chocolate\">"
+    else:
+        return "<td style=\"color:#fff8e7\">"
 
 
 #------------------------------------------------------------------------
@@ -150,8 +179,7 @@ with open("index.html", 'w') as data:
     data.write(indent+"<table>\n")
 
     #Fill in the data cells of the table
-    #WriteScores(scores)
-    RoundScores(scores)
+    WriteScores(scores)
 
     data.write(indent+"</table>\n")
     data.write("</body>\n")
