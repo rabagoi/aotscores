@@ -56,7 +56,7 @@ scores= [
         ["The Black Hole of Knowledge",
             30, 50, 0, 0, 0, 0],
 
-        ["Higgs Boson (.Y.)",
+        ["Higgs Bosom (.Y.)",
             40, 40, 0, 0, 0, 0],
 
         ["Boobquest",
