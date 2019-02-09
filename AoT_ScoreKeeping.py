@@ -26,7 +26,7 @@ finale = True               # If True, the Final Scores row will be colored.
 # Team names and scores. Fill in with teams and scores from each event.
 scores= [
         ["Team 1",
-            0, 0, 0, 0, 0, 0],
+            0.0, 0, 0, 0, 0, 0],
 
         ["Team &Sigma;<sub>n=0</sub> 1/2<sup>n</sup>",
             0, 0, 0, 0, 0, 0],
