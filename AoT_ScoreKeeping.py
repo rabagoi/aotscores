@@ -24,21 +24,47 @@ indent = ' '*2              # Size of the indent
 finale = True               # If True, the Final Scores row will be colored.
 
 # Team names and scores. Fill in with teams and scores from each event.
+# <sub>, <sup>, &Greek;
 scores= [
-        ["Team 1",
-            0.0, 0, 0, 0, 0, 0],
+        ["Spacegoats",
+            30, 50, 0, 0, 0, 0],
 
-        ["Team &Sigma;<sub>n=0</sub> 1/2<sup>n</sup>",
-            0, 0, 0, 0, 0, 0],
+        ["Captain's Log is Orbiting Uranus",
+            10, 40, 0, 0, 0, 0],
 
-        ["Team &pi;, Basically",
-            0, 0, 0, 0, 0, 0],
+        ["Black Hole - A Movie Date Night",
+            20, 3, 0, 0, 0, 0],
 
-        ["Team 2<sup>2</sup>",
-            0, 0, 0, 0, 0, 0],
+        ["Sun Dogs",
+            40, 40, 0, 0, 0, 0],
 
-        ["Team V",
-            0, 0, 0, 0, 0, 0],
+        ["Comet me, bro",
+            40, 40, 0, 0, 0, 0],
+
+        ["Plutocracy",
+            10, 50, 0, 0, 0, 0],
+
+        ["Shooting Stars",
+            10, 20, 0, 0, 0, 0],
+
+        ["Gibbeous Liberty or Gibbeous Death!",
+            30, 40, 0, 0, 0, 0],
+        
+        ["Carry a Towel",
+            30, 50, 0, 0, 0, 0],
+
+        ["The Black Hole of Knowledge",
+            30, 50, 0, 0, 0, 0],
+
+        ["Higgs Boson (.Y.)",
+            40, 40, 0, 0, 0, 0],
+
+        ["Boobquest",
+            30, 20, 0, 0, 0, 0],
+
+        ["Cassini deserved better",
+            10, 0, 0, 0, 0, 0],
+
         ]
 
 
