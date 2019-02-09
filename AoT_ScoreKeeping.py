@@ -27,43 +27,43 @@ finale = True               # If True, the Final Scores row will be colored.
 # <sub>, <sup>, &Greek;
 scores= [
         ["Spacegoats",
-            30, 50, 0, 0, 0, 0],
+            30, 50, 50, 0, 0, 0],
 
         ["Captain's Log is Orbiting Uranus",
-            10, 40, 0, 0, 0, 0],
+            10, 40, 50, 0, 0, 0],
 
         ["Black Hole - A Movie Date Night",
-            20, 30, 0, 0, 0, 0],
+            20, 30, 50, 0, 0, 0],
 
         ["Sun Dogs",
-            40, 40, 0, 0, 0, 0],
+            40, 40, 40, 0, 0, 0],
 
         ["Comet me, bro",
-            40, 40, 0, 0, 0, 0],
+            40, 40, 50, 0, 0, 0],
 
         ["Plutocracy",
-            10, 50, 0, 0, 0, 0],
+            10, 50, 40, 0, 0, 0],
 
         ["Shooting Stars",
-            10, 20, 0, 0, 0, 0],
+            10, 20, 50, 0, 0, 0],
 
         ["Gibbeous Liberty or Gibbeous Death!",
-            30, 40, 0, 0, 0, 0],
+            30, 40, 50, 0, 0, 0],
         
         ["Carry a Towel",
-            30, 50, 0, 0, 0, 0],
+            30, 50, 50, 0, 0, 0],
 
         ["The Black Hole of Knowledge",
-            30, 50, 0, 0, 0, 0],
+            30, 50, 50, 0, 0, 0],
 
         ["Higgs Bosom (.Y.)",
-            40, 40, 0, 0, 0, 0],
+            40, 40, 40, 0, 0, 0],
 
         ["Boobquest",
-            30, 20, 0, 0, 0, 0],
+            30, 20, 50, 0, 0, 0],
 
         ["Cassini deserved better",
-            10, 0, 0, 0, 0, 0],
+            10, 0, 50, 0, 0, 0],
 
         ]
 
