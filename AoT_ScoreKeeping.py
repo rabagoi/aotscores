@@ -28,44 +28,44 @@ finale = True               # If True, the Final Scores row will be colored.
 # Team names and scores. Fill in with teams and scores from each event.
 # <sub>, <sup>, &Greek;
 scores= [
-        ["Spacegoats",
-            30, 50, 50, 40, 80, 250],
+        ["Team 1",
+            0, 0, 0, 0, 0, 0],
 
-        ["Captain's Log is Orbiting Uranus",
-            10, 40, 50, 60, 60, 0],
+        ["Team 2",
+            0, 0, 0, 0, 0, 0],
 
-        ["Black Hole - A Movie Date Night",
-            20, 30, 50, 20, 60, -180],
+        ["Team 3",
+            0, 0, 0, 0, 0, 0],
 
-        ["Sun Dogs",
-            40, 40, 40, 100, 80, 0],
+        ["Team 4",
+            0, 0, 0, 0, 0, 0],
 
-        ["Comet me, bro",
-            40, 40, 50, 80, 60, -270],
+        ["Team 5",
+            0, 0, 0, 0, 0, 0],
 
-        ["Plutocracy",
-            10, 50, 40, 60, 80, -10],
+        ["Team 6",
+            0, 0, 0, 0, 0, 0],
 
-        ["Shooting Stars",
-            10, 20, 50, 60, 80, -200],
+        ["Team 7",
+            0, 0, 0, 0, 0, 0],
 
-        ["Gibbeous Liberty or Gibbeous Death!",
-            30, 40, 50, 60, 60, -230],
+        ["Team 8",
+            0, 0, 0, 0, 0, 0],
         
-        ["Carry a Towel",
-            30, 50, 50, 80, 80, 21],
+        ["Team 9",
+            0, 0, 0, 0, 0, 0],
 
-        ["The Black Hole of Knowledge",
-            30, 50, 50, 80, 100, 291],
+        ["Team 9",
+            0, 0, 0, 0, 0, 0],
 
-        ["Higgs Bosom (.Y.)",
-            40, 40, 40, 80, 100, 300],
+        ["Team 10",
+            0, 0, 0, 0, 0, 0],
 
-        ["Boobquest",
-            30, 20, 50, 40, 0, 12345],
+        ["Team 11",
+            0, 0, 0, 0, 0, 0],
 
-        ["Cassini deserved better",
-            10, 0, 50, 60, 40, -160],
+        ["Team 12",
+            0, 0, 0, 0, 0, 0],
 
         ]
 

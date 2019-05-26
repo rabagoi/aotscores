@@ -10,6 +10,10 @@ img {
 
 body {
     background-color:black;
+    background-image: url("M87BH.png");
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
     color:yellow;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
