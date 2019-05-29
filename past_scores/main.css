@@ -10,14 +10,12 @@ img {
 
 body {
     background-color:black;
-    /* M87 background */
     background-image: url("M87BH.png");
     background-position: center top;
     background-size: cover;
     background-repeat: no-repeat;
-
     color:yellow;
-    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 table {
@@ -35,14 +33,14 @@ th {
 
 .bigquestion {
     font-weight: bolder;
-    background-color: rgba(105,105,105,0.5); /* color:dimgray */
+    background-color: dimgray;
 }
 
 .summary {
     font-weight: bolder;
     font-size: 120%;
     height: 125%;
-    background-color: rgba(47,79,79,0.5); /* color:darkslategray */
+    background-color: darkslategray;
 }
 
 .final {

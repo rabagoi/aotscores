@@ -69,7 +69,6 @@ scores= [
 
         ]
 
-
 # Add the HTML header.
 def Header():
     data.write("<!DOCTYPE html>\n")
@@ -83,6 +82,17 @@ def Header():
     data.write(indent+"<script src=\"main.js\"></script>\n")
     data.write("</head>\n")
 
+
+# Read scores from a written file. Team names and scores are separated by a length of 5 asterisks.
+def ReadScores():
+    scorelist = []
+    with open('scores.txt', 'r') as data:
+        for line in data:
+            l = line.split('*****')
+            sc = [int(s) for s in l[-1].split()]
+            scorelist.append([l[0]]+sc)
+
+    return scorelist
 
 # Write the scores for individual rounds
 def WriteScores(scores):
@@ -194,6 +204,7 @@ def Podium(scores, x):
         return "<td style=\"color:#fff8e7\">"
 
 
+scores = ReadScores()
 #------------------------------------------------------------------------
 # Write the HTML script.
 with open("index.html", 'w') as data:
