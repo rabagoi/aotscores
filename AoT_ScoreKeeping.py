@@ -27,6 +27,7 @@ finale = True               # If True, the Final Scores row will be colored.
 
 # Team names and scores. Fill in with teams and scores from each event.
 # <sub>, <sup>, &Greek;
+'''
 scores= [
         ["Team 1",
             0, 0, 0, 0, 0, 0],
@@ -68,7 +69,7 @@ scores= [
             0, 0, 0, 0, 0, 0],
 
         ]
-
+'''
 # Add the HTML header.
 def Header():
     data.write("<!DOCTYPE html>\n")
