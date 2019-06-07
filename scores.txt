@@ -1,11 +1,11 @@
-Alderan Duran*****40 40 0 0 0 0
-All Black Holes Lives Matter*****40 20 0 0 0 0
-Black Holes of Knowledge*****30 10 0 0 0 0
-Can you smell what Dirac is Cooking?*****30 30 0 0 0 0
-Devil's Hole Swim Team*****40 30 0 0 0 0
-Han (No Last Name)*****40 20 0 0 0 0
-Interstellar*****30 40 0 0 0 0
-Motley Crew*****40 40 0 0 0 0
+Alderan Duran*****40 40 50 0 0 0
+All Black Holes Lives Matter*****40 20 50 0 0 0
+Black Holes of Knowledge*****30 10 50 0 0 0
+Can you <i>smell</i> what <i>Dirac</i> is <i>Cooking</i>?*****30 30 40 0 0 0
+Devil's Hole Swim Team*****40 30 50 0 0 0
+Han (No Last Name)*****40 20 20 0 0 0
+Interstellar*****30 40 40 0 0 0
+Motley Crew*****40 40 40 0 0 0
 Team Daydrunk*****30 0 0 0 0 0
-The Orbiters*****40 30 0 0 0 0
-White Dwarf Stars*****40 40 0 0 0 0
+The Orbiters*****40 30 50 0 0 0
+White Dwarf Stars*****40 40 35 0 0 0
