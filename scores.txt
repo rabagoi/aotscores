@@ -9,3 +9,23 @@ Motley Crew*****40 40 40 100 100 -0
 Team Daydrunk*****30 0 0 0 0 0
 The Orbiters*****40 30 50 80 100 -300
 White Dwarf Stars*****40 40 35 60 100 -150
+Teams*****10 10 10 10 10 -50
+Teams*****10 10 10 10 10 -50
+Teams*****10 10 10 10 10 -50
+Teams*****10 10 10 10 10 -50
+Teams*****10 10 10 10 10 -50
+More Teams*****10 10 10 10 10 -50
+More Teams*****10 10 10 10 10 -50
+More Teams*****10 10 10 10 10 -50
+More Teams*****10 10 10 10 10 -50
+More Teams*****10 10 10 10 10 -50
+More Teams*****10 10 10 10 10 -50
+More Teams*****10 10 10 10 10 -50
+More Teams*****10 10 10 10 10 -50
+More Teams*****10 10 10 10 10 -50
+Even More Teams*****10 10 10 10 10 -50
+Even More Teams*****10 10 10 10 10 -50
+Even More Teams*****10 10 10 10 10 -50
+Even More Teams*****10 10 10 10 10 -50
+Even More Teams*****10 10 10 10 10 -50
+Even More Teams*****10 10 10 10 10 -50

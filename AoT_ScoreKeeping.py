@@ -24,6 +24,7 @@ N = 2                       # Number of questions in a round
 roundlength = 2*(N+1)       # Length of a round, including labels
 indent = ' '*2              # Size of the indent
 finale = True               # If True, the Final Scores row will be colored.
+scfile = "scores.txt"
 
 # Team names and scores. Fill in with teams and scores from each event.
 # <sub>, <sup>, &Greek;
@@ -87,11 +88,41 @@ def Header():
 # Read scores from a written file. Team names and scores are separated by a length of 5 asterisks.
 def ReadScores():
     scorelist = []
-    with open('scores.txt', 'r') as data:
+    totalscores = []
+    with open(scfile, 'r') as data:
         for line in data:
             l = line.split('*****')
             sc = [int(s) for s in l[-1].split()]
+            #print(sum(sc))
+            totalscores.append(sum(sc))
             scorelist.append([l[0]]+sc)
+            # Perform an insertion sort each line to reorder the teams by descending score.
+            # Third variable is required for swap function since arrays are the objects being swapped.
+            for i in range(len(totalscores)-1, 0, -1):
+                if totalscores[i] > totalscores[i-1]:
+                    # Swap total scores
+                    scoreswp = totalscores[i]
+                    totalscores[i] = totalscores[i-1]
+                    totalscores[i-1] = scoreswp
+                    # Swap teams
+                    teamswp = scorelist[i]
+                    scorelist[i] = scorelist[i-1]
+                    scorelist[i-1] = teamswp
+
+
+
+    #print (totalscores)
+    #for i in range(len(totalscores)):
+    #    s = totalscores[i]
+    #    teamorder.append(totalscores.index(s, i))
+    #print(teamorder)
+    
+    #print([teamorder.index(i) for i in teamorder])
+    #Swaptest
+    #c = scorelist[0]
+    #scorelist[0] = scorelist[-1]
+    #scorelist[-1] = c
+    #print(scorelist)
 
     return scorelist
 
@@ -214,13 +245,16 @@ with open("index.html", 'w') as data:
     #Set background and text colors, font
     data.write("<body>\n")
     # data.write(indent+"<img src=\"AoTLogo.png\">\n")
-    data.write(indent+"<h1 style=\"font-size:60px; text-align:center\">Astronomy on Tap Scoreboard</h1>\n")
+    #data.write(indent+"<h1 style=\"font-size:60px; text-align:center\">Astronomy on Tap Scoreboard</h1>\n")
+    data.write(indent+"<h1 class=\"eventtitle\">Astronomy on Tap - Space Rocks! And Mars Rocks Too!</h1>\n")
     data.write(indent+"<hr>\n")
+    data.write(indent+"<div style=\"overflow-x: auto;\">\n")
     data.write(indent+"<table>\n")
 
     #Fill in the data cells of the table
     WriteScores(scores)
 
     data.write(indent+"</table>\n")
+    data.write(indent+"</div>\n")
     data.write("</body>\n")
     data.write("</html>")
