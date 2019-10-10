@@ -1,31 +1,15 @@
-Alderan Duran*****40 40 50 80 100 -310
-All Black Holes Lives Matter*****40 20 50 80 100 -250
-Black Holes of Knowledge*****30 10 50 80 80 -250
-Can you <i>smell</i> what <i>Dirac</i> is <i>Cooking</i>?*****30 30 40 80 100 -280
-Devil's Hole Swim Team*****40 30 50 100 100 -320
-Han (No Last Name)*****40 20 20 80 80 240
-Interstellar*****30 40 40 80 100 290
-Motley Crew*****40 40 40 100 100 -0
-Team Daydrunk*****30 0 0 0 0 0
-The Orbiters*****40 30 50 80 100 -300
-White Dwarf Stars*****40 40 35 60 100 -150
-Teams*****10 10 10 10 10 -50
-Teams*****10 10 10 10 10 -50
-Teams*****10 10 10 10 10 -50
-Teams*****10 10 10 10 10 -50
-Teams*****10 10 10 10 10 -50
-More Teams*****10 10 10 10 10 -50
-More Teams*****10 10 10 10 10 -50
-More Teams*****10 10 10 10 10 -50
-More Teams*****10 10 10 10 10 -50
-More Teams*****10 10 10 10 10 -50
-More Teams*****10 10 10 10 10 -50
-More Teams*****10 10 10 10 10 -50
-More Teams*****10 10 10 10 10 -50
-More Teams*****10 10 10 10 10 -50
-Even More Teams*****10 10 10 10 10 -50
-Even More Teams*****10 10 10 10 10 -50
-Even More Teams*****10 10 10 10 10 -50
-Even More Teams*****10 10 10 10 10 -50
-Even More Teams*****10 10 10 10 10 -50
-Even More Teams*****10 10 10 10 10 -50
+Teams*****0 0 0 0 0 0
+Teams*****0 0 0 0 0 0
+Teams*****0 0 0 0 0 0
+Teams*****0 0 0 0 0 0
+Teams*****0 0 0 0 0 0
+More Teams*****0 0 0 0 0 0
+More Teams*****0 0 0 0 0 0
+More Teams*****0 0 0 0 0 0
+More Teams*****0 0 0 0 0 0
+More Teams*****0 0 0 0 0 0
+Even More Teams*****0 0 0 0 0 0
+Even More Teams*****0 0 0 0 0 0
+Even More Teams*****0 0 0 0 0 0
+Even More Teams*****0 0 0 0 0 0
+Even More Teams*****0 0 0 0 0 0

@@ -14,8 +14,8 @@ be displayed with a web browser.
 TO DO:
 | | Allow the number of entries in the team arrays to be any size, while
 adjusting the number of rounds, i.e. separate the round and team counters
-| | Use a file input instead of opening the code?
-| | Add color shading for final question
+|X| Use a file input instead of opening the code?
+|X| Add color shading for final question
 
 ---------------------------------------------------------------------
 '''
