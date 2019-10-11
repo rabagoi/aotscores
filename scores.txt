@@ -1,15 +1,16 @@
-Teams*****0 0 0 0 0 0
-Teams*****0 0 0 0 0 0
-Teams*****0 0 0 0 0 0
-Teams*****0 0 0 0 0 0
-Teams*****0 0 0 0 0 0
-More Teams*****0 0 0 0 0 0
-More Teams*****0 0 0 0 0 0
-More Teams*****0 0 0 0 0 0
-More Teams*****0 0 0 0 0 0
-More Teams*****0 0 0 0 0 0
-Even More Teams*****0 0 0 0 0 0
-Even More Teams*****0 0 0 0 0 0
-Even More Teams*****0 0 0 0 0 0
-Even More Teams*****0 0 0 0 0 0
-Even More Teams*****0 0 0 0 0 0
+Clever Trivia Name*****0 40 0 0 0 0
+Specific Gravity*****30 40 0 0 0 0
+Microbe-brew*****30 20 0 0 0 0
+Wizard*****10 20 0 0 0 0
+Enemies of the Quizlamic State*****10 30 0 0 0 0
+By Grabthar's Hammer*****30 50 0 0 0 0
+Binary System*****40 30 0 0 0 0
+Jupiter Recognize!*****10 30 0 0 0 0
+Blueberry Hillbillies*****30 40 0 0 0 0
+Bonified Bolides*****40 30 0 0 0 0
+Black Holes of Knowledge*****0 30 0 0 0 0
+CritFail*****0 40 0 0 0 0
+George*****0 40 0 0 0 0
+Something Space-Related*****20 50 0 0 0 0
+Tardigrade Brigade*****20 40 0 0 0 0
+Daniel Trujillo*****0 50 0 0 0 0
