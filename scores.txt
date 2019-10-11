@@ -1,16 +1,16 @@
-Clever Trivia Name*****0 40 50 60 80 0
-Specific Gravity*****30 40 50 40 100 0
-Microbe-brew*****30 20 50 40 60 0
-Wizard*****10 20 0 0 0 0
-Enemies of the Quizlamic State*****10 30 40 20 100 0
-By Grabthar's Hammer*****30 50 50 60 80 0
-Binary System*****40 30 50 40 80 0
-Jupiter Recognize!*****10 30 0 40 60 0
-Blueberry Hillbillies*****30 40 50 80 60 0
-Bonified Bolides*****40 30 50 60 80 0
+Clever Trivia Name*****0 40 50 60 80 230
+Specific Gravity*****30 40 50 40 100 -260
+Microbe-brew*****30 20 50 40 60 -200
+Wizard*****10 20 0 0 0 30
+Enemies of the Quizlamic State*****10 30 40 20 100 -200
+By Grabthar's Hammer*****30 50 50 60 80 270
+Binary System*****40 30 50 40 80 210
+Jupiter Recognize!*****10 30 0 40 60 -100
+Blueberry Hillbillies*****30 40 50 80 60 -260
+Bonified Bolides*****40 30 50 60 80 -0
 Black Holes of Knowledge*****0 30 10 40 40 0
-CritFail*****0 40 50 60 60 0
-George*****0 40 50 60 40 0
-Something Space-Related*****20 50 50 80 80 0
-Tardigrade Brigade*****20 40 50 40 80 0
-Daniel Trujillo*****0 50 50 40 100 0
+CritFail*****0 40 50 60 60 -210
+George*****0 40 50 60 40 -190
+Something Space-Related*****20 50 50 80 80 280
+Tardigrade Brigade*****20 40 50 40 80 -230
+Daniel Trujillo*****0 50 50 40 100 -0
