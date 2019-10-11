@@ -149,7 +149,10 @@ def WriteScores(scores):
             qlabel = "Halftime"
             ot = ot.replace("<tr>", "<tr class=\"bigquestion\">")
         elif i == roundlength:
+            # Check here if scores[j][i] is negative; add CSS class with red color?
             qlabel = "Final"
+            #if scores[j][i] < 0:
+                #print("NEGATIVE", i, j)
             ot = ot.replace("<tr>", "<tr class=\"bigquestion\">")
         elif i == roundlength+1:
             qlabel = "Halftime Totals"
@@ -167,13 +170,23 @@ def WriteScores(scores):
         
         # Write the scores for each round.
         for j in range(len(scores)):
-            # Halftime Scores
+            # Scores on the Final
+            if i == roundlength:
+                if scores[j][i] < 0:
+                    cell_missed = "<td class=\"missed\">"
+                    row += cell_missed+str(scores[j][i])+cell_ct
+            #        print("NEGATIVE", i, j, cell_ot)
+                else:
+                    row += cell_ot+str(scores[j][i])+cell_ct
+                continue
+                    #cell_ot = cell_ot.replace("td", "td class=\" missed\"")
+            # Halftime Totals
             if i == roundlength+1:
                 row += cell_ot+str(sum(scores[j][1:N+2]))+cell_ct
-            # Prefinal Scores
+            # Prefinal Totals
             elif i == roundlength+2:
                 row += cell_ot+str(sum(scores[j][1:-1]))+cell_ct
-            # Final Scores
+            # Final Totals
             elif i == roundlength+3:
                 fscore = sum(scores[j][1:])
                 # Color the final scores for the finale.
