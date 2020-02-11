@@ -28,49 +28,7 @@ scfile = "scores.txt"
 
 # Team names and scores. Fill in with teams and scores from each event.
 # <sub>, <sup>, &Greek;
-'''
-scores= [
-        ["Team 1",
-            0, 0, 0, 0, 0, 0],
 
-        ["Team 2",
-            0, 0, 0, 0, 0, 0],
-
-        ["Team 3",
-            0, 0, 0, 0, 0, 0],
-
-        ["Team 4",
-            0, 0, 0, 0, 0, 0],
-
-        ["Team 5",
-            0, 0, 0, 0, 0, 0],
-
-        ["Team 6",
-            0, 0, 0, 0, 0, 0],
-
-        ["Team 7",
-            0, 0, 0, 0, 0, 0],
-
-        ["Team 8",
-            0, 0, 0, 0, 0, 0],
-        
-        ["Team 9",
-            0, 0, 0, 0, 0, 0],
-
-        ["Team 9",
-            0, 0, 0, 0, 0, 0],
-
-        ["Team 10",
-            0, 0, 0, 0, 0, 0],
-
-        ["Team 11",
-            0, 0, 0, 0, 0, 0],
-
-        ["Team 12",
-            0, 0, 0, 0, 0, 0],
-
-        ]
-'''
 # Add the HTML header.
 def Header():
     data.write("<!DOCTYPE html>\n")
@@ -111,7 +69,7 @@ def ReadScores():
 
 
 
-    #print (totalscores)
+    print (totalscores)
     #for i in range(len(totalscores)):
     #    s = totalscores[i]
     #    teamorder.append(totalscores.index(s, i))
@@ -122,12 +80,13 @@ def ReadScores():
     #c = scorelist[0]
     #scorelist[0] = scorelist[-1]
     #scorelist[-1] = c
-    #print(scorelist)
+    print(scorelist)
 
     return scorelist
 
 # Write the scores for individual rounds
 def WriteScores(scores):
+    # For each team+score list
     for i in range(len(scores[0])+3):
 
         # Strings for the opening tags, table row, and closing tags.
