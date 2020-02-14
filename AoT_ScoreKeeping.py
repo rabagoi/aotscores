@@ -16,6 +16,9 @@ TO DO:
 adjusting the number of rounds, i.e. separate the round and team counters
 |X| Use a file input instead of opening the code?
 |X| Add color shading for final question
+| | Transpose teams/scores
+| | Rearrange shading - use col and colgroup tags
+| | Use star pictures as score markers???
 
 ---------------------------------------------------------------------
 '''

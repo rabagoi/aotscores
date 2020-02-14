@@ -6,22 +6,31 @@
 }
 
 /* Controls image background. Deprecated. */
+
 img {
     /* Change image size and center horizontally */
-    max-height: 20%;
-    max-width: 20%;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    background-color: darkblue;
+    /* max-height: 20%; */
+    /* max-width: 20%; */
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    /* display: block; */
+    /*background-color: darkblue;*/
+}
+
+
+/* Star images */
+.stars {
+    height: 30px;
+    width: 30px;
+
 }
 
 /* Controls the appearance of the main board, scores, and the background. */
 body {
     background-color:black;
     /* set background */
-    background-image: url("bg/nakhlite.jpg");
-    background-position: center center;
+    background-image: url("bg/HLTau.jpg");
+    /*background-position: top cente;*/
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -38,7 +47,7 @@ table {
     font-size: 200%;
     background-color: rgba(60, 60, 60, 0.8); /* color:dark gray */
 
-    /* width: 400%; */
+     width: 100%; 
 }
 
 /* Table headings */
