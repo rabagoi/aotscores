@@ -27,7 +27,7 @@ N = 2                       # Number of questions in a round
 roundlength = 2*(N+1)       # Length of a round, including labels
 indent = ' '*2              # Size of the indent
 finale = True               # If True, the Final Scores row will be colored.
-scfile = "scores.txt"
+scfile = "scores.txt"       # txt file to read the scores from.
 
 # Team names and scores. Fill in with teams and scores from each event.
 # <sub>, <sup>, &Greek;
@@ -52,13 +52,16 @@ def ReadScores():
     totalscores = []
     with open(scfile, 'r') as data:
         for line in data:
-            l = line.split('*****')
+            # Separate the team names and scores and convert the scores into numbers.
+            l = line.split('*****') # Unique separator for teams and scores
             sc = [int(s) for s in l[-1].split()]
-            #print(sum(sc))
-            totalscores.append(sum(sc))
+            
+            # Record the team name and numeric scores in one array, and append the result to a list of arrays called scorelist.
+            # Also record the running total for each team.
             scorelist.append([l[0]]+sc)
-            # Perform an insertion sort each line to reorder the teams by descending score.
-            # Third variable is required for swap function since arrays are the objects being swapped.
+            totalscores.append(sum(sc))
+            # Using insertion sort, reorder the teams by descending total score.
+            # A third variable is required for swap function since arrays are the objects being swapped.
             for i in range(len(totalscores)-1, 0, -1):
                 if totalscores[i] > totalscores[i-1]:
                     # Swap total scores
@@ -87,7 +90,7 @@ def ReadScores():
 
     return scorelist
 
-# Write the scores for individual rounds
+# Write the scores for individual rounds in HTML
 def WriteScores(scores):
     # For each team+score list
     for i in range(len(scores[0])+3):
@@ -97,7 +100,7 @@ def WriteScores(scores):
         row = 3*indent
         ct = '\n'+2*indent+"</tr>\n"
 
-        # Cell opening and closing tags
+        # Cell opening and closing tags, using table headers and data cells.
         cell_ot = "<td>" if i!=0 else "<th>"
         cell_ct = "</td>" if i!=0 else "</th>"
 
@@ -127,7 +130,7 @@ def WriteScores(scores):
             qlabel = "Final Scores"
             ot = ot.replace("tr", "tr class=\"final summary\"")
 
-        # Add question number
+        # Add question number to the HTML
         ot += 3*indent+cell_ot+qlabel+cell_ct+"\n"
         
         # Write the scores for each round.
