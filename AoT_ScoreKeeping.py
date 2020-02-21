@@ -17,6 +17,7 @@ adjusting the number of rounds, i.e. separate the round and team counters
 |X| Use a file input instead of opening the code?
 |X| Add color shading for final question
 | | Transpose teams/scores
+   >---| | Append totalscores to the end of each team's score list. Completes the transpose rows.
 | | Rearrange shading - use col and colgroup tags
 | | Use star pictures as score markers???
 
@@ -57,9 +58,10 @@ def ReadScores():
             sc = [int(s) for s in l[-1].split()]
             
             # Record the team name and numeric scores in one array, and append the result to a list of arrays called scorelist.
-            # Also record the running total for each team.
-            scorelist.append([l[0]]+sc)
+            # Additionally, record the running total for each team and append it to the end of their score list.
             totalscores.append(sum(sc))
+            scorelist.append([l[0]]+sc)
+            scorelist[-1].append(totalscores[-1])
             # Using insertion sort, reorder the teams by descending total score.
             # A third variable is required for swap function since arrays are the objects being swapped.
             for i in range(len(totalscores)-1, 0, -1):
@@ -164,38 +166,97 @@ def WriteScores(scores):
 
         data.write(ot+row+ct)
 
-# Write only the summary scores, Round 1 total, Round 2 total, etc.
-# Might not need this?
-def RoundScores(scores):
-    # Calculate total scores for each round.
-    totals = [
-    ["Teams"]+[scores[i][0] for i in range(len(scores))],
-    ["Round 1"]+[sum(scores[i][1:N+1]) for i in range(len(scores))],
-    ["Halftime"]+[sum(scores[i][1:N+2]) for i in range(len(scores))],
-    ["Round 2"]+[sum(scores[i][N+2:-1]) for i in range(len(scores))],
-    ["Pre-Final"]+[sum(scores[i][1:-1]) for i in range(len(scores))],
-    ["Final"]+[sum(scores[i][1:]) for i in range(len(scores))],
-    ]
+# Write the scores for individual rounds in HTML
+def WriteScoresHoriz(scores):
+    # First, write the top row into the HTML file. These are the labels for each column.
+    toprow = 3*indent+"<tr> <th>Team</th><th>R1</th><th>R2</th><th>HT</th><th>R3</th><th>R4</th><th>Final</th><th>Score</th> </tr>\n"
+    data.write(toprow)
+    # For each team in the list
+    for i in range(len(scores)):
+        # HTML strings for the table row tags and indent. Must be refreshed each row.
+        ot = 2*indent+"<tr>\n"
+        row = 3*indent
+        ct = '\n'+2*indent+"</tr>\n"        
+        # For each score for the team
+        for j in range(len(scores[i])):
+            # Table cell opening and closing tags. Must be refreshed each cell.
+            cell_ot = "<td>"
+            cell_ct = "</td>"
+            # Write the score in the round as a table element.
+            row += cell_ot+str(scores[i][j])+cell_ct
 
-    # Write total scores
-    for i in range(len(totals)):
-        print(totals[i])
-
+        """
         # Strings for the opening tags, table row, and closing tags.
         ot = 2*indent+"<tr>\n"
         row = 3*indent
         ct = '\n'+2*indent+"</tr>\n"
 
-        # Cell opening and closing tags
+        # Cell opening and closing tags, using table headers and data cells.
         cell_ot = "<td>" if i!=0 else "<th>"
         cell_ct = "</td>" if i!=0 else "</th>"
 
-        # Write each row of the cell.
-        for j in range(len(totals[0])):
-            row += cell_ot+str(totals[i][j])+cell_ct
+        # Variable to set the question number, set to i%(1+N_questions).
+        # Change this if the number of questions per round is different.
+        qnum = i-i//(N+1)
+        qlabel = "Round"+(' '+str(qnum) if i!=0 else '')
 
-        # Write data to file
+        # Add special labels for the halftime and final questions.
+        if i == roundlength/2:
+            qlabel = "Halftime"
+            ot = ot.replace("<tr>", "<tr class=\"bigquestion\">")
+        elif i == roundlength:
+            # Check here if scores[j][i] is negative; add CSS class with red color?
+            qlabel = "Final"
+            #if scores[j][i] < 0:
+                #print("NEGATIVE", i, j)
+            ot = ot.replace("<tr>", "<tr class=\"bigquestion\">")
+        elif i == roundlength+1:
+            qlabel = "Halftime Totals"
+            ot = ot.replace("<tr>", "<tr class=\"summary\">")
+            ot = 2*indent+"<tr><td><br></td></tr>\n" + ot
+        elif i == roundlength+2:
+            qlabel = "Pre-Final Scores"
+            ot = ot.replace("tr", "tr class=\"summary\"")
+        elif i == roundlength+3:
+            qlabel = "Final Scores"
+            ot = ot.replace("tr", "tr class=\"final summary\"")
+
+        # Add question number to the HTML
+        ot += 3*indent+cell_ot+qlabel+cell_ct+"\n"
+        
+        # Write the scores for each round.
+        for j in range(len(scores)):
+            # Scores on the Final
+            if i == roundlength:
+                if scores[j][i] < 0:
+                    cell_missed = "<td class=\"missed\">"
+                    row += cell_missed+str(scores[j][i])+cell_ct
+            #        print("NEGATIVE", i, j, cell_ot)
+                else:
+                    row += cell_ot+str(scores[j][i])+cell_ct
+                continue
+                    #cell_ot = cell_ot.replace("td", "td class=\" missed\"")
+            # Halftime Totals
+            if i == roundlength+1:
+                row += cell_ot+str(sum(scores[j][1:N+2]))+cell_ct
+            # Prefinal Totals
+            elif i == roundlength+2:
+                row += cell_ot+str(sum(scores[j][1:-1]))+cell_ct
+            # Final Totals
+            elif i == roundlength+3:
+                fscore = sum(scores[j][1:])
+                # Color the final scores for the finale.
+                if (finale):
+                    cell_ot = Podium(scores, fscore)
+                row += cell_ot+str(fscore)+cell_ct
+            # Scores for round i
+            else:
+                row += cell_ot+str(scores[j][i])+cell_ct
+
         data.write(ot+row+ct)
+        """
+        # Once the entire row is written, write the entire row into the table.
+        data.write(ot+row+ct)        
 
 
 # Colors the final scores for 1st, 2nd, and 3rd place.
@@ -230,7 +291,7 @@ with open("index.html", 'w') as data:
     data.write(indent+"<table>\n")
 
     #Fill in the data cells of the table
-    WriteScores(scores)
+    WriteScoresHoriz(scores)
 
     data.write(indent+"</table>\n")
     data.write(indent+"</div>\n")
