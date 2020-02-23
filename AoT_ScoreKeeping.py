@@ -180,11 +180,22 @@ def WriteScoresHoriz(scores):
         # For each score for the team
         for j in range(len(scores[i])):
             # Table cell opening and closing tags. Must be refreshed each cell.
+            global cell_ot
             cell_ot = "<td>"
             cell_ct = "</td>"
+
+            # Formatting checks for cells:
+            # Check to see if this column is a big round, i.e. halftime or final.
+            # Check to see if a team lost points this round. This should only apply to the final round.
+            if j > 0 and scores[i][j] < 0.0:
+                cell_ot = cell_ot.replace("<td>", "<td class=\"missed\">")
+            # For running totals, color the scores based on a team's current position.
+            if (j == len(scores[i])-1):
+                cell_ot = PodiumHoriz(i,j)
+
             # Write the score in the round as a table element.
             row += cell_ot+str(scores[i][j])+cell_ct
-
+            
         """
         # Strings for the opening tags, table row, and closing tags.
         ot = 2*indent+"<tr>\n"
@@ -274,6 +285,23 @@ def Podium(scores, x):
     else:
         return "<td style=\"color:#fff8e7\">"
 
+# Colors the final scores by place by changing the opening <td> tag.
+# Since the scores are already sorted in ReadScores, only a team's position i in the table is needed.
+def PodiumHoriz(i,j):
+
+    # 1st Place - Gold
+    if (i==0):
+        return "<td style=\"color:gold\">"
+    # 2nd Place - Silver
+    elif (i==1):
+        return "<td style=\"color:silver\">"
+    # 3rd Place - Bronze
+    elif (i==2):
+        return "<td style=\"color:chocolate\">"
+    # All Other Places - Cosmic Latte
+    else:
+        return "<td style=\"color:#fff8e7\">"
+
 
 scores = ReadScores()
 #------------------------------------------------------------------------
@@ -285,7 +313,7 @@ with open("index.html", 'w') as data:
     data.write("<body>\n")
     # data.write(indent+"<img src=\"AoTLogo.png\">\n")
     #data.write(indent+"<h1 style=\"font-size:60px; text-align:center\">Astronomy on Tap Scoreboard</h1>\n")
-    data.write(indent+"<h1 class=\"eventtitle\">Astronomy on Tap - Space Rocks! And Mars Rocks Too!</h1>\n")
+    data.write(indent+"<h1 class=\"eventtitle\">Astronomy on Tap - The Birth of Planets</h1>\n")
     data.write(indent+"<hr>\n")
     data.write(indent+"<div style=\"overflow-x: auto;\">\n")
     data.write(indent+"<table>\n")

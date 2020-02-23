@@ -63,6 +63,7 @@ th {
 .bigquestion {
     font-weight: bolder;
     background-color: rgba(120, 120, 120, 0.8); /* color:dimgray */
+    font-size: 200%;
 }
 
 /* Coloring the missed final questions red */
