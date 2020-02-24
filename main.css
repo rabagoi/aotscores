@@ -51,9 +51,10 @@ table {
 }
 
 /* Table headings */
+/* Options here were used to keep the team names displayed and formatted properly */
 th {
-    font-weight: bolder;
-    font-size: 80%;
+    /* font-weight: bold; */
+    font-size: 100%;
     overflow: hidden;
     white-space: normal;
     max-height: 50%;
@@ -61,9 +62,8 @@ th {
 
 /* Format for big questions like halftime and final */
 .bigquestion {
-    font-weight: bolder;
+    /* font-weight: bolder; */
     background-color: rgba(120, 120, 120, 0.8); /* color:dimgray */
-    font-size: 200%;
 }
 
 /* Coloring the missed final questions red */

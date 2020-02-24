@@ -177,24 +177,29 @@ def WriteScoresHoriz(scores):
         ot = 2*indent+"<tr>\n"
         row = 3*indent
         ct = '\n'+2*indent+"</tr>\n"        
-        # For each score for the team
+        # For each score in a team's list,
         for j in range(len(scores[i])):
             # Table cell opening and closing tags. Must be refreshed each cell.
-            global cell_ot
             cell_ot = "<td>"
             cell_ct = "</td>"
-
+            cell_format = ""
             # Formatting checks for cells:
+            # Color the final scores by rank
+            if (j == len(scores[i])-1):
+                #cell_ot = PodiumHoriz(i,j)
+                cell_format += PodiumHoriz(i,j)
             # Check to see if this column is a big round, i.e. halftime or final.
+            if (j == 3 or j == 6):
+                cell_format += " class=\"bigquestion\""
             # Check to see if a team lost points this round. This should only apply to the final round.
             if j > 0 and scores[i][j] < 0.0:
-                cell_ot = cell_ot.replace("<td>", "<td class=\"missed\">")
-            # For running totals, color the scores based on a team's current position.
-            if (j == len(scores[i])-1):
-                cell_ot = PodiumHoriz(i,j)
+                #cell_ot = cell_ot.replace(">", " class=\"missed\">")
+                cell_format += " class=\"missed\""
 
-            # Write the score in the round as a table element.
+            # Add cell formatting and write the score in the round as a table element.
+            cell_ot = cell_ot.replace(">", cell_format+">")
             row += cell_ot+str(scores[i][j])+cell_ct
+            #row += "<td{}>".format(cell_format)+str(scores[i][j])+"</td>"
             
         """
         # Strings for the opening tags, table row, and closing tags.
@@ -269,6 +274,17 @@ def WriteScoresHoriz(scores):
         # Once the entire row is written, write the entire row into the table.
         data.write(ot+row+ct)        
 
+# Set <col> and <colgroup> tags for the table.
+
+def SetColumns():
+    data.write(2*indent+"<colgroup>\n")
+    data.write(3*indent+"<col>\n")                            # Teams
+    data.write(3*indent+"<col span=2>\n")                     # Rounds 1 and 2
+    data.write(3*indent+"<col class=\"bigquestion\">\n")      # Halftime
+    data.write(3*indent+"<col span=2>\n")                     # Rounds 3 and 4
+    data.write(3*indent+"<col class=\"bigquestion\">\n")      # Final
+    data.write(3*indent+"<col class=\"final summary\">\n")    # Current Score
+    data.write(2*indent+"</colgroup>\n")
 
 # Colors the final scores for 1st, 2nd, and 3rd place.
 def Podium(scores, x):
@@ -291,16 +307,20 @@ def PodiumHoriz(i,j):
 
     # 1st Place - Gold
     if (i==0):
-        return "<td style=\"color:gold\">"
+        #return "<td style=\"color:gold\">"
+        return " style=\"color:gold\""
     # 2nd Place - Silver
     elif (i==1):
-        return "<td style=\"color:silver\">"
+        #return "<td style=\"color:silver\">"
+        return " style=\"color:silver\""
     # 3rd Place - Bronze
     elif (i==2):
-        return "<td style=\"color:chocolate\">"
+        #return "<td style=\"color:chocolate\">"
+        return " style=\"color:chocolate\""
     # All Other Places - Cosmic Latte
     else:
-        return "<td style=\"color:#fff8e7\">"
+        #return "<td style=\"color:#fff8e7\">"
+        return " style=\"color:#fff8e7\""
 
 
 scores = ReadScores()
@@ -319,6 +339,7 @@ with open("index.html", 'w') as data:
     data.write(indent+"<table>\n")
 
     #Fill in the data cells of the table
+    SetColumns()
     WriteScoresHoriz(scores)
 
     data.write(indent+"</table>\n")
