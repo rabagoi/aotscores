@@ -182,22 +182,31 @@ def WriteScoresHoriz(scores):
             # Table cell opening and closing tags. Must be refreshed each cell.
             cell_ot = "<td>"
             cell_ct = "</td>"
-            cell_format = ""
-            # Formatting checks for cells:
-            # Color the final scores by rank
-            if (j == len(scores[i])-1):
-                #cell_ot = PodiumHoriz(i,j)
-                cell_format += PodiumHoriz(i,j)
+            cell_class = ""
+            cell_style = ""
+
+            # --------Formatting checks for cells:------------
+            # For teams, left-justify the names
+            if (j==0):
+                cell_class += " team"
             # Check to see if this column is a big round, i.e. halftime or final.
             if (j == 3 or j == 6):
-                cell_format += " class=\"bigquestion\""
+                cell_class += " bigquestion"
             # Check to see if a team lost points this round. This should only apply to the final round.
-            if j > 0 and scores[i][j] < 0.0:
-                #cell_ot = cell_ot.replace(">", " class=\"missed\">")
-                cell_format += " class=\"missed\""
+            if j == len(scores[i])-2 and scores[i][j] < 0.0:
+                cell_class += " missed"
+            # Color the final scores by rank
+            if (j == len(scores[i])-1):
+                cell_style += PodiumHoriz(i,j)
+                cell_class += " final"
 
-            # Add cell formatting and write the score in the round as a table element.
-            cell_ot = cell_ot.replace(">", cell_format+">")
+            # Add any cell formatting in style and class elements.
+            #cell_ot = cell_ot.replace(">", cell_format+">")
+            if cell_class != "":
+                cell_ot = cell_ot.replace(">", " class=\"" + cell_class.lstrip() + "\">")
+            if cell_style != "":
+                cell_ot = cell_ot.replace(">", " style=\"" + cell_style.lstrip() + "\">")
+            # Write the score in the round as a table element.
             row += cell_ot+str(scores[i][j])+cell_ct
             #row += "<td{}>".format(cell_format)+str(scores[i][j])+"</td>"
             
@@ -308,19 +317,23 @@ def PodiumHoriz(i,j):
     # 1st Place - Gold
     if (i==0):
         #return "<td style=\"color:gold\">"
-        return " style=\"color:gold\""
+        #return " style=\"color:gold\""
+        return " color:gold"
     # 2nd Place - Silver
     elif (i==1):
         #return "<td style=\"color:silver\">"
-        return " style=\"color:silver\""
+        #return " style=\"color:silver\""
+        return " color:silver"
     # 3rd Place - Bronze
     elif (i==2):
         #return "<td style=\"color:chocolate\">"
-        return " style=\"color:chocolate\""
+        #return " style=\"color:chocolate\""
+        return " color:chocolate"
     # All Other Places - Cosmic Latte
     else:
         #return "<td style=\"color:#fff8e7\">"
-        return " style=\"color:#fff8e7\""
+        #return " style=\"color:#fff8e7\""
+        return " color:#fff8e7"
 
 
 scores = ReadScores()

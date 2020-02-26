@@ -51,19 +51,24 @@ table {
 }
 
 /* Table headings */
-/* Options here were used to keep the team names displayed and formatted properly */
+/* For a horizontal table, this row highlights the proper table headers - Team, Round Number, Final, etc. */
 th {
-    /* font-weight: bold; */
+    /*
+    font-weight: bold;
     font-size: 100%;
     overflow: hidden;
     white-space: normal;
     max-height: 50%;
+    */
+    background-color: rgba(120, 120, 120, 0.8); /* color:dimgray */
+    font-size: 125%;
 }
 
 /* Format for big questions like halftime and final */
-.bigquestion {
+.bigquestion { 
     /* font-weight: bolder; */
-    background-color: rgba(120, 120, 120, 0.8); /* color:dimgray */
+    /* background-color: rgba(120, 120, 120, 0.8); /* color:dimgray */
+    font-size: 150%;
 }
 
 /* Coloring the missed final questions red */
@@ -77,6 +82,12 @@ th {
     font-size: 120%;
     height: 125%;
     background-color: rgba(47,79,79,0.8); /* color:darkslategray */
+}
+
+/* Formatting for Team names */
+.team {
+    text-align: left;
+    /* text-shadow: 0px 0px 5px gold; */
 }
 
 /* Final summary boxes */
