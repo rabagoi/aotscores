@@ -284,15 +284,14 @@ def WriteScoresHoriz(scores):
         data.write(ot+row+ct)        
 
 # Set <col> and <colgroup> tags for the table.
-
 def SetColumns():
     data.write(2*indent+"<colgroup>\n")
-    data.write(3*indent+"<col>\n")                            # Teams
+    data.write(3*indent+"<col width=20%>\n")                            # Teams
     data.write(3*indent+"<col span=2>\n")                     # Rounds 1 and 2
     data.write(3*indent+"<col class=\"bigquestion\">\n")      # Halftime
     data.write(3*indent+"<col span=2>\n")                     # Rounds 3 and 4
     data.write(3*indent+"<col class=\"bigquestion\">\n")      # Final
-    data.write(3*indent+"<col class=\"final summary\">\n")    # Current Score
+    data.write(3*indent+"<col width=20% class=\"final summary\">\n")    # Current Score
     data.write(2*indent+"</colgroup>\n")
 
 # Colors the final scores for 1st, 2nd, and 3rd place.

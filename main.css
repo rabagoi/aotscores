@@ -44,7 +44,7 @@ table {
     /* overflow-x: auto; */
     text-align: center;
     border-spacing: 0px;
-    font-size: 200%;
+    font-size: 225%;
     background-color: rgba(60, 60, 60, 0.8); /* color:dark gray */
 
      width: 100%; 
@@ -61,14 +61,14 @@ th {
     max-height: 50%;
     */
     background-color: rgba(120, 120, 120, 0.8); /* color:dimgray */
-    font-size: 125%;
+    font-size: 120%;
 }
 
 /* Format for big questions like halftime and final */
 .bigquestion { 
     /* font-weight: bolder; */
     /* background-color: rgba(120, 120, 120, 0.8); /* color:dimgray */
-    font-size: 150%;
+    font-size: 130%;
 }
 
 /* Coloring the missed final questions red */
@@ -87,10 +87,13 @@ th {
 /* Formatting for Team names */
 .team {
     text-align: left;
+    padding-left: 1%;
+    /* font-weight: bold; */
     /* text-shadow: 0px 0px 5px gold; */
 }
 
 /* Final summary boxes */
 .final {
     font-size: 150%;
+    text-shadow:0px 0px 2px;
 }
