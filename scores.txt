@@ -1,18 +1,10 @@
 The team that keeps on teaming*****0 0 0 0 0 0
-Team 2*****10 10 10 10 10 10
-Team 3*****50 40 30 20 10 -100
-Team 4*****50 30 20 40 80 -60
-The team that keeps on teaming*****0 0 0 0 0 0
-he team that keeps on teaming*****0 0 0 0 0 0
-he team that keeps on teaming*****0 0 0 0 0 0
-he team that keeps on teaming*****0 0 0 0 0 0
-The team that keeps on teaming*****0 0 0 0 0 0
-The team that keeps on teaming*****0 0 0 0 0 0
-The team that keeps on teaming*****0 0 0 0 0 0
-The team that keeps on teaming*****0 0 0 0 0 0
-The team that keeps on teaming*****0 0 0 0 0 0
-The team that keeps on teaming*****0 0 0 0 0 0
-The team that keeps on teaming*****0 0 0 0 0 0
-The team that keeps on teaming*****0 0 0 0 0 0
-The team that keeps on teaming*****0 0 0 0 0 0
-The team that keeps on teaming*****0 0 0 0 0 0
+Team 2*****0 0 0 0 0 0
+Team 3*****0 0 0 0 0 0
+Team 4*****0 0 0 0 0 0
+Team 5*****0 0 0 0 0 0
+Team 6*****0 0 0 0 0 0
+Team 7*****0 0 0 0 0 0
+Team 8*****0 0 0 0 0 0
+Team 9*****0 0 0 0 0 0
+Team 10*****0 0 0 0 0 0
