@@ -20,6 +20,8 @@ adjusting the number of rounds, i.e. separate the round and team counters
    >---| | Append totalscores to the end of each team's score list. Completes the transpose rows.
 | | Rearrange shading - use col and colgroup tags
 | | Use star pictures as score markers???
+| | Sticky title
+| | auto-update control?
 
 ---------------------------------------------------------------------
 '''

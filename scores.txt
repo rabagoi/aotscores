@@ -1,12 +1,12 @@
-Remus & Romulus*****40 0 50 40 20 0
-Public Works*****40 20 40 0 0 0
-Apes of Wrath*****50 30 50 50 40 0
-Kick the Keg...into the Sun*****20 0 50 30 10 0
+Remus & Romulus*****40 0 50 40 20 -150
+Public Works*****40 20 40 0 0 -100
+Apes of Wrath*****50 30 50 50 40 -220
+Kick the Keg...into the Sun*****20 0 50 30 10 -11
 Mizar & Alcor*****40 40 50 50 40 0
-AstroPunks*****20 20 50 50 0 0
-Astrology on Tap*****40 30 50 20 30 0
-Yes, Crust*****40 40 50 50 50 0
-Corbin Dallas (Multipass)*****30 30 50 40 40 0
+AstroPunks*****20 20 50 50 0 -140
+Astrology on Tap*****40 30 50 20 30 150
+Yes, Crust*****40 40 50 50 50 -230
+Corbin Dallas (Multipass)*****30 30 50 40 40 -190
 Black Hole of Knowledge*****40 30 50 30 40 0
-New Moon, Who Dis?*****50 40 40 40 40 0
+New Moon, Who Dis?*****50 40 40 40 40 210
 Harrison*****0 20 0 0 0 0
