@@ -197,7 +197,9 @@ def WriteScoresHoriz(scores):
                 cell_class += " missed"
             # Color the final scores by rank
             if (j == len(scores[i])-1):
-                cell_style += PodiumHoriz(i,j)
+                totals = [scores[i][-1] for i in range(len(scores))]
+                print(totals)
+                cell_style += PodiumHoriz(i,j, totals)
                 cell_class += " final"
 
             # Add any cell formatting in style and class elements.
@@ -311,7 +313,7 @@ def Podium(scores, x):
 
 # Colors the final scores by place by changing the opening <td> tag.
 # Since the scores are already sorted in ReadScores, only a team's position i in the table is needed.
-def PodiumHoriz(i,j):
+def PodiumHoriz(i,j, totals):
 
     # 1st Place - Gold
     if (i==0):
