@@ -199,7 +199,7 @@ def WriteScoresHoriz(scores):
             if (j == len(scores[i])-1):
                 totals = [scores[i][-1] for i in range(len(scores))]
                 print(totals)
-                cell_style += PodiumHoriz(i,j, totals)
+                cell_style += PodiumHoriz(i,scores[i][-1], totals)
                 cell_class += " final"
 
             # Add any cell formatting in style and class elements.
@@ -316,17 +316,17 @@ def Podium(scores, x):
 def PodiumHoriz(i,j, totals):
 
     # 1st Place - Gold
-    if (i==0):
+    if (i==0 or j==totals[0]):
         #return "<td style=\"color:gold\">"
         #return " style=\"color:gold\""
         return " color:gold"
     # 2nd Place - Silver
-    elif (i==1):
+    elif (i==1 or j==totals[1]):
         #return "<td style=\"color:silver\">"
         #return " style=\"color:silver\""
         return " color:silver"
     # 3rd Place - Bronze
-    elif (i==2):
+    elif (i==2 or j==totals[2]):
         #return "<td style=\"color:chocolate\">"
         #return " style=\"color:chocolate\""
         return " color:chocolate"
