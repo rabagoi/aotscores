@@ -31,7 +31,7 @@ finale = True               # If True, the Final Scores row will be colored.
 scfile = "scores.txt"       # txt file to read the scores from.
 
 # Team names and scores. Fill in with teams and scores from each event.
-# <sub>, <sup>, &Greek;
+# <sub>, <sup>, &Greek, &#Unicode/Emoji;
 
 # Add the HTML header.
 def Header():
