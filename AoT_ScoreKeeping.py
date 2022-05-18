@@ -214,76 +214,6 @@ def WriteScoresHoriz(scores):
             row += cell_ot+str(scores[i][j])+cell_ct
             #row += "<td{}>".format(cell_format)+str(scores[i][j])+"</td>"
             
-        """
-        # Strings for the opening tags, table row, and closing tags.
-        ot = 2*indent+"<tr>\n"
-        row = 3*indent
-        ct = '\n'+2*indent+"</tr>\n"
-
-        # Cell opening and closing tags, using table headers and data cells.
-        cell_ot = "<td>" if i!=0 else "<th>"
-        cell_ct = "</td>" if i!=0 else "</th>"
-
-        # Variable to set the question number, set to i%(1+N_questions).
-        # Change this if the number of questions per round is different.
-        qnum = i-i//(N+1)
-        qlabel = "Round"+(' '+str(qnum) if i!=0 else '')
-
-        # Add special labels for the halftime and final questions.
-        if i == roundlength/2:
-            qlabel = "Halftime"
-            ot = ot.replace("<tr>", "<tr class=\"bigquestion\">")
-        elif i == roundlength:
-            # Check here if scores[j][i] is negative; add CSS class with red color?
-            qlabel = "Final"
-            #if scores[j][i] < 0:
-                #print("NEGATIVE", i, j)
-            ot = ot.replace("<tr>", "<tr class=\"bigquestion\">")
-        elif i == roundlength+1:
-            qlabel = "Halftime Totals"
-            ot = ot.replace("<tr>", "<tr class=\"summary\">")
-            ot = 2*indent+"<tr><td><br></td></tr>\n" + ot
-        elif i == roundlength+2:
-            qlabel = "Pre-Final Scores"
-            ot = ot.replace("tr", "tr class=\"summary\"")
-        elif i == roundlength+3:
-            qlabel = "Final Scores"
-            ot = ot.replace("tr", "tr class=\"final summary\"")
-
-        # Add question number to the HTML
-        ot += 3*indent+cell_ot+qlabel+cell_ct+"\n"
-        
-        # Write the scores for each round.
-        for j in range(len(scores)):
-            # Scores on the Final
-            if i == roundlength:
-                if scores[j][i] < 0:
-                    cell_missed = "<td class=\"missed\">"
-                    row += cell_missed+str(scores[j][i])+cell_ct
-            #        print("NEGATIVE", i, j, cell_ot)
-                else:
-                    row += cell_ot+str(scores[j][i])+cell_ct
-                continue
-                    #cell_ot = cell_ot.replace("td", "td class=\" missed\"")
-            # Halftime Totals
-            if i == roundlength+1:
-                row += cell_ot+str(sum(scores[j][1:N+2]))+cell_ct
-            # Prefinal Totals
-            elif i == roundlength+2:
-                row += cell_ot+str(sum(scores[j][1:-1]))+cell_ct
-            # Final Totals
-            elif i == roundlength+3:
-                fscore = sum(scores[j][1:])
-                # Color the final scores for the finale.
-                if (finale):
-                    cell_ot = Podium(scores, fscore)
-                row += cell_ot+str(fscore)+cell_ct
-            # Scores for round i
-            else:
-                row += cell_ot+str(scores[j][i])+cell_ct
-
-        data.write(ot+row+ct)
-        """
         # Once the entire row is written, write the entire row into the table.
         data.write(ot+row+ct)        
 
@@ -349,7 +279,7 @@ with open("index.html", 'w') as data:
     data.write("<body>\n")
     # data.write(indent+"<img src=\"AoTLogo.png\">\n")
     #data.write(indent+"<h1 style=\"font-size:60px; text-align:center\">Astronomy on Tap Scoreboard</h1>\n")
-    data.write(indent+"<h1 class=\"eventtitle\">Astronomy on Tap - The Birth of Planets</h1>\n")
+    data.write(indent+"<h1 class=\"eventtitle\">Astronomy on Tap - Backyard Telescopes</h1>\n")
     data.write(indent+"<hr>\n")
     data.write(indent+"<div style=\"overflow-x: auto;\">\n")
     data.write(indent+"<table>\n")
