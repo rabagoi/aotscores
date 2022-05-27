@@ -1,11 +1,11 @@
 What the Quark*****40 40 40 80 80 0
-Team Name*****20 10 30 80 60 0
-Rowdy Boys*****30 20 30 60 80 0
+Team Name*****20 10 30 80 60 100
+Rowdy Boys*****30 20 30 60 80 -20
 Dark Side of the Moon*****40 30 50 80 40 0
-The Earthlings*****40 40 30 80 60 0
-Lost in Space*****10 0 50 80 60 0
-Elon's Tusk*****20 30 50 100 80 0
-Space Racoons*****20 30 50 100 100 0
-Big Ronnie*****0 0 30 100 40 0
-Svetty Balls*****0 0 30 60 100 0
-Razzmataz*****0 0 50 40 80 0
+The Earthlings*****40 40 30 80 60 250
+Lost in Space*****10 0 50 80 60 -200
+Elon's Tusk*****20 30 50 100 80 -280
+Space Racoons*****20 30 50 100 100 -280
+Big Ronnie*****0 0 30 100 40 -170
+Svetty Balls*****0 0 30 60 100 190
+Razzmataz*****0 0 50 40 80 170
