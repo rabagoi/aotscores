@@ -1,5 +1,9 @@
-Team 1*****0 0 0 0 0 0
-Team 2*****0 0 0 0 0 0
-Team 3*****0 0 0 0 0 0
-Team 4*****0 0 0 0 0 0
-Team 5*****0 0 0 0 0 0
+What the Quark*****40 40 0 0 0 0
+Team Name*****20 10 0 0 0 0
+Rowdy Boys*****30 20 0 0 0 0
+Dark Side of the Moon*****40 30 0 0 0 0
+The Earthlings*****40 40 0 0 0 0
+Lost in Space*****10 0 0 0 0 0
+Elon's Tusk*****20 30 0 0 0 0
+Space Racoons*****20 30 0 0 0 0
+Big Ronnie*****0 0 0 0 0 0
