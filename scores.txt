@@ -2,10 +2,10 @@ What the Quark*****40 40 40 0 0 0
 Team Name*****20 10 30 0 0 0
 Rowdy Boys*****30 20 30 0 0 0
 Dark Side of the Moon*****40 30 50 0 0 0
-The Earthlings*****40 40 0 0 0 0
+The Earthlings*****40 40 30 0 0 0
 Lost in Space*****10 0 50 0 0 0
 Elon's Tusk*****20 30 50 0 0 0
 Space Racoons*****20 30 50 0 0 0
-Big Ronnie*****0 0 0 0 0 0
+Big Ronnie*****0 0 30 0 0 0
 Svetty Balls*****0 0 30 0 0 0
 Razzmataz*****0 0 50 0 0 0
