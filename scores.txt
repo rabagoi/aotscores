@@ -1,6 +1,6 @@
 Astro Falcon*****40 40 50 20 60 -210
 The Gay-sars*****40 40 50 100 80 -100
-The Singularity*****50 50 50 80 100 -330
+The Singularity*****50 50 50 80 100 0
 Just Me*****20 40 50 100 80 -288
 Spacebong*****50 20 50 80 80 -280
 Ninjas*****30 20 40 40 80 -210
