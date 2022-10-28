@@ -1,14 +1,14 @@
 Astro Falcon*****40 40 0 0 0 0
-The Gay-sars*****40 40 0 0 0 0
-The Singularity*****50 50 0 0 0 0
-Just Me*****20 40 0 0 0 0
-Spacebong*****50 20 0 0 0 0
-Ninjas*****30 20 0 0 0 0
-Event Horizon*****50 0 0 0 0 0
-The Spookie Dookies*****40 30 0 0 0 0
-Albert Beerstein*****40 20 0 0 0 0
-Lower Deckspectations*****50 40 0 0 0 0
-Boo to You*****50 10 0 0 0 0
-Blake Huel*****50 40 0 0 0 0
+The Gay-sars*****40 40 50 0 0 0
+The Singularity*****50 50 50 0 0 0
+Just Me*****20 40 50 0 0 0
+Spacebong*****50 20 50 0 0 0
+Ninjas*****30 20 40 0 0 0
+Event Horizon*****50 0 50 0 0 0
+The Spookie Dookies*****40 30 50 0 0 0
+Albert Beerstein*****40 20 50 0 0 0
+Lower Deckspectations*****50 40 50 0 0 0
+Boo to You*****50 10 50 0 0 0
+Blake Huel*****50 40 50 0 0 0
 Shak'd*****40 30 0 0 0 0
 Quarky Boys*****50 20 0 0 0 0
