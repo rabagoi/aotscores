@@ -279,7 +279,7 @@ with open("index.html", 'w') as data:
     data.write("<body>\n")
     # data.write(indent+"<img src=\"AoTLogo.png\">\n")
     #data.write(indent+"<h1 style=\"font-size:60px; text-align:center\">Astronomy on Tap Scoreboard</h1>\n")
-    data.write(indent+"<h1 class=\"eventtitle\">Astronomy on Tap - The Horrors of Black Holes</h1>\n")
+    data.write(indent+"<h1 class=\"eventtitle\">Astronomy on Tap - Universe in a Box</h1>\n")
     data.write(indent+"<hr>\n")
     data.write(indent+"<div style=\"overflow-x: auto;\">\n")
     data.write(indent+"<table>\n")

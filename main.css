@@ -29,8 +29,8 @@ img {
 body {
     background-color:black;
     /* set background */
-    background-image: url("bg/gargantua.png");
-    /*background-position: top cente;*/
+    background-image: url("bg/Illustris_gasvel.png");
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 
