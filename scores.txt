@@ -1,12 +1,12 @@
-Grabthar's Hammer*****10 50 0 0 0 0
-Magnetars*****20 50 0 0 0 0
-Compact Objects*****50 50 0 0 0 0
-The Rebel Alliance*****10 40 0 0 0 0
-Bored in Translation*****0 50 0 0 0 0
-Matrix Unloaded*****10 40 0 0 0 0
-Wimdy*****30 50 0 0 0 0
-Space Dust*****20 50 0 0 0 0
-:)?*****0 50 0 0 0 0
-Death Becomes Us*****0 40 0 0 0 0
-Pluto is Still A Planet*****0 40 0 0 0 0
-Black Hole of Knowledge*****10 40 0 0 0 0
+Grabthar's Hammer*****10 50 40 0 0 0
+Magnetars*****20 50 50 0 0 0
+Compact Objects*****50 50 50 0 0 0
+The Rebel Alliance*****10 40 50 0 0 0
+Bored in Translation*****0 50 50 0 0 0
+Matrix Unloaded*****10 40 40 0 0 0
+Wimdy*****30 50 50 0 0 0
+Space Dust*****20 50 50 0 0 0
+:)?*****0 50 50 0 0 0
+Death Becomes Us*****0 40 50 0 0 0
+Pluto is Still A Planet*****0 40 50 0 0 0
+Black Hole of Knowledge*****10 40 50 0 0 0
