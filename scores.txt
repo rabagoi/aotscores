@@ -1,6 +1,15 @@
 Journey to the Center of the Earth
-Test*****1 2 3 4 5 6
-Team Name*****0 0 0 0 0 0
-Team Name*****0 0 0 0 0 0
-Team Name*****0 0 0 0 0 0
-Team Name*****0 0 0 0 0 0
+The A-team*****30 40 40 60 80 0 
+Anthony's Miches*****30 30 10 80 65 0
+Ass to Asteroid*****40 40 40 100 100 0
+Aybee-see-sea-dees*****30 30 10 100 50 0
+CHUDs*****20 40 10 80 70 0
+Cosmic Confusion*****50 50 50 100 65 0
+Danilaina*****0 0 30 20 80 0
+Dark Matter*****20 30 40 80 60 0
+Dos Amigos + 1*****40 40 20 100 65 0
+The Morlocks*****50 50 30 100 20 0
+Nom Nom*****40 30 0 80 0 0
+Silver Stampede*****50 50 20 80 60 0
+Sirius MD*****30 40 10 80 40 0
+Titanic Mini Sub*****40 30 40 100 85 0
